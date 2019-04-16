@@ -1,0 +1,86 @@
+
+
+<html>
+    
+<head>   
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+
+
+    <style>
+        
+        #mainDiv{
+            background-color: aqua;
+            padding: 5%;
+        }
+        
+        #secondDiv{
+            background-color: bisque;
+            padding: 40%;
+            border: black solid;
+        }
+   
+    </style>
+    
+</head>
+
+<body>
+
+    
+    <div id="mainDiv">
+        <div>
+    R <input type="range" min="0" max="255" id="color_r_range" 
+  value="3" onchange="range_R_value_changed()">
+        </div>
+        <div>
+    G <input type="range" min="0" max="255" id="color_g_range" 
+      value="3">
+        </div>
+        <div>
+            
+    B <input type="range" min="0" max="255" id="color_b_range" 
+    value="3">
+        </div>
+        
+        <div>
+            R <input type="text" id="color_r_input" onchange="input_R_value_changed()">
+            G <input type="text" id="color_g_input">
+            B <input type="text" id="color_b_input">
+        </div>
+    </div>
+    
+    
+    
+    
+    <div id="secondDiv">
+        
+    </div>
+
+    
+    
+    
+    
+    
+    <script>
+        function range_R_value_changed()
+        {
+            var r = document.getElementById("color_r_range").value;
+             document.getElementById("color_r_input").value= r;
+            document.getElementById("secondDiv").style.backgroundColor = "rgb(" + r + ",0,0)";
+        }
+        
+        function input_R_value_changed()
+        {
+            document.getElementById("color_r_input").value;
+           alert( document.getElementById("color_r_input").value);
+        }
+        
+    </script>
+</body>
+
+</html>
