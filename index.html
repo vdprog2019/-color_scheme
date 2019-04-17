@@ -39,18 +39,18 @@
         </div>
         <div>
     G <input type="range" min="0" max="255" id="color_g_range" 
-      value="3">
+      value="3" onchange="range_G_value_changed()">
         </div>
         <div>
             
     B <input type="range" min="0" max="255" id="color_b_range" 
-    value="3">
+    value="3" onchange="range_B_value_changed()">
         </div>
         
         <div>
             R <input type="text" id="color_r_input" onchange="input_R_value_changed()">
-            G <input type="text" id="color_g_input">
-            B <input type="text" id="color_b_input">
+            G <input type="text" id="color_g_input" onchange="input_G_value_changed()">
+            B <input type="text" id="color_b_input" onchange="input_B_value_changed()">
         </div>
     </div>
     
@@ -67,17 +67,56 @@
     
     
     <script>
+
+        //первое поле
         function range_R_value_changed()
         {
             var r = document.getElementById("color_r_range").value;
-             document.getElementById("color_r_input").value= r;
+            document.getElementById("color_r_input").value= r;
             document.getElementById("secondDiv").style.backgroundColor = "rgb(" + r + ",0,0)";
         }
         
         function input_R_value_changed()
         {
-            document.getElementById("color_r_input").value;
-           alert( document.getElementById("color_r_input").value);
+            var i = document.getElementById("color_r_input").value;
+            document.getElementById("color_r_range").value = i;
+            document.getElementById("secondDiv").style.backgroundColor = "rgb(" + i + ",0,0)";
+        }
+
+
+
+
+        //второе поле
+        function range_G_value_changed()
+        {
+            var r2 = document.getElementById("color_g_range").value;
+            document.getElementById("color_g_input").value= r2;
+            document.getElementById("secondDiv").style.backgroundColor = "rgb(" + r2 + ",0,0)";
+        }
+
+        function input_G_value_changed()
+        {
+            var i2 = document.getElementById("color_g_input").value;
+            document.getElementById("color_g_range").value = i2;
+            document.getElementById("secondDiv").style.backgroundColor = "rgb(" + i2 + ",0,0)";
+        }
+            
+
+
+        //третье поле
+        function range_B_value_changed()
+        {
+            var r3 = document.getElementById("color_b_range").value;
+            document.getElementById("color_b_input").value= r3;
+            document.getElementById("secondDiv").style.backgroundColor = "rgb(" + r3 + ",0,0)";
+
+        }
+        
+        function input_B_value_changed()
+        {
+            var i2 = document.getElementById("color_b_input").value;
+            document.getElementById("color_b_range").value = i3;
+            document.getElementById("secondDiv").style.backgroundColor = "rgb(" + i3 + ",0,0)";
         }
         
     </script>
